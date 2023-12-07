@@ -17,7 +17,10 @@
   <div class="page-body">
     <div class="show-section">
       <div class="show-para">今天要继续努力！！</div>
+      <!-- <audio src="blob:https://www.ncmdump.net/37de0ed6-d41e-4b27-95d9-342af8d04d77" controls="controls" autoplay="autoplay"></audio> -->
+      <audio class="show-player" src="./assets/music/Hello Saferide - Long Lost Penpal.mp3" ></audio>
     </div>
+    <div class="show-btn"></div>
   </div>
   <script>
     let nowDate = new Date();
@@ -27,6 +30,22 @@
     datetime = `今天是${nowDate.getFullYear()}年${month < 10 ? "0" + (month) : month}月${day}日 星期${weekDay}`;  // "2018-03-26"
     let headerTime = document.getElementsByClassName('header-time')[0]
     headerTime.innerHTML = datetime;
+
+    let showBtn = document.getElementsByClassName('show-btn')[0]
+    let audio = document.getElementsByTagName('audio')[0]
+    let flag = false
+    showBtn.addEventListener('click', function () {
+      audio.play()
+      console.log('sss');
+      if (flag) {
+        audio.pause()
+      }
+      else {
+        audio.play()
+      }
+      flag = !flag;
+      // console.log(audio);
+    })
 
   </script>
 </body>

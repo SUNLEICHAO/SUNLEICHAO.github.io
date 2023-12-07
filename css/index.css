@@ -5,6 +5,32 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
+@keyframes badge-color-cycle {
+  0% {
+    background-color: #ffda79;
+    transform: rotate(0deg);
+  }
+
+  25% {
+    background-color: #ffabe7;
+  }
+
+  50% {
+    background-color: #d2bcf3;
+    transform: rotate(180deg);
+
+  }
+
+  75% {
+    background-color: #edf3d8;
+  }
+
+  100% {
+    background-color: #ffda79;
+    transform: rotate(360deg);
+  }
+}
+
 .page-header {
   padding: 40px;
   background-color: #DFDBE5;
@@ -28,12 +54,24 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.page-body > * {
+.page-body>* {
   padding: 20px;
   background-color: #fff;
   border-radius: 4px;
 }
 
-.show-para {
+.show-para {}
 
+.show-btn {
+  position: fixed;
+  bottom: 40px;
+  width: 20px;
+  height: 40px;
+  animation: badge-color-cycle 32s linear infinite;
+  border-radius: 99999999px;
+  cursor: pointer;
+}
+
+.show-btn:hover {
+  opacity: .8;
 }
