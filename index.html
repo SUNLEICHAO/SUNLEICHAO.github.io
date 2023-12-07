@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A page from SUN</title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
-  <h1>Hello~</h1>
-  <h2>今天是<strong>2023年10月29日</strong></h2>
+  <header class="page-header">
+    <p class="header-time"></p>
+    <span class="header-info">重新开始学习前端的时间是<strong>2023年10月29日</strong></span>
+  </header>
+
+  <div class="page-body">
+    <div class="show-section">
+      <div class="show-para">今天要继续努力！！</div>
+    </div>
+  </div>
+  <script>
+    let nowDate = new Date();
+    let month = nowDate.getMonth() + 1
+    let day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+    let weekDay = nowDate.getDay()
+    datetime = `今天是${nowDate.getFullYear()}年${month < 10 ? "0" + (month) : month}月${day}日 星期${weekDay}`;  // "2018-03-26"
+    let headerTime = document.getElementsByClassName('header-time')[0]
+    headerTime.innerHTML = datetime;
+
+  </script>
 </body>
+
 </html>
