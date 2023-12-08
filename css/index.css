@@ -31,6 +31,20 @@ body {
   }
 }
 
+@keyframes color-change {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .page-header {
   padding: 40px;
   background-color: #DFDBE5;
@@ -65,6 +79,9 @@ body {
 .show-btn {
   position: fixed;
   bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 40px;
   animation: badge-color-cycle 32s linear infinite;
@@ -74,4 +91,18 @@ body {
 
 .show-btn:hover {
   opacity: .8;
+}
+
+.show-btn__line:first-child {
+  transform: rotate(90deg);
+}
+
+.show-btn__line {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #333;
+  animation: color-change 8s linear infinite;
 }

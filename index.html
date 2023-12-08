@@ -18,9 +18,12 @@
     <div class="show-section">
       <div class="show-para">今天要继续努力！！</div>
       <!-- <audio src="blob:https://www.ncmdump.net/37de0ed6-d41e-4b27-95d9-342af8d04d77" controls="controls" autoplay="autoplay"></audio> -->
-      <audio class="show-player" src="./assets/music/Hello Saferide - Long Lost Penpal.mp3" ></audio>
+      <audio class="show-player" src="./assets/music/Hello Saferide - Long Lost Penpal.mp3"></audio>
     </div>
-    <div class="show-btn"></div>
+    <div class="show-btn">
+      <span class="show-btn__line"></span>
+      <span class="show-btn__line"></span>
+    </div>
   </div>
   <script>
     let nowDate = new Date();
@@ -33,18 +36,24 @@
 
     let showBtn = document.getElementsByClassName('show-btn')[0]
     let audio = document.getElementsByTagName('audio')[0]
+    showBtn.style.animationPlayState = "paused";
+
     let flag = false
     showBtn.addEventListener('click', function () {
       audio.play()
-      console.log('sss');
       if (flag) {
         audio.pause()
+        showBtn.style.animationPlayState = "paused";
       }
       else {
         audio.play()
+        showBtn.style.animationPlayState = "running";
       }
       flag = !flag;
-      // console.log(audio);
+
+      // const running = showBtn.style.animationPlayState || "running";
+      // 判断的新思路
+      // showBtn.style.animationPlayState = running === "running" ? "paused" : "running";
     })
 
   </script>
